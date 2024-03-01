@@ -11,7 +11,11 @@ class Restaurante:
     
     def listar_restaurantes():
         for restaurante in Restaurante.restaurantes:
-            print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.ativo}')
+            print(f'{restaurante.nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo}')
+
+    @property
+    def ativo(self):
+        return 'verdadeiro' if self.ativo else 'false'
 
 restaurante_praca = Restaurante('Praça', 'Gourmet')
 restaurante_pizza = Restaurante('Pizza Express', 'Italiano')
